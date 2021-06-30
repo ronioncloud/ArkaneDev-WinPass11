@@ -111,7 +111,7 @@ namespace winPass11_guided_install
                 case 2:
                     button1.Enabled = false;
                     label1.Text = "Refer to image and box for directions ^";
-                    richTextBox1.Text = "Now we are at the stage to update the system, this stage is simple.\nFirst go to Settings -> Update and security -> Windows Insider Program, and ensure you are in the dev Channel.\nRestart if you weren't. Scroll up and click windows update in the left bar and click check now, if everything went well\nyou should see downloading Windows 11 Insider Preview, but dont leave just yet, we still need to bypass the\nrequirements!";
+                    richTextBox1.Text = "Now we are at the stage to update the system, this stage is simple.\nFirst go to Settings -> Update and security -> Windows Insider Program, and ensure you are in the Dev Channel.\nRestart if you weren't. Scroll up and click windows update in the left bar and click check now, if everything went well\nyou should see downloading Windows 11 Insider Preview, but dont leave just yet, we still need to bypass the\nrequirements!";
                     break;
                 case 3:
                     button1.Enabled = true;
