@@ -118,14 +118,14 @@ namespace winPass11_guided_install
                     break;
                 case 2:
                     label1.Text = "Update Settings >";
-                    pictureBox1.ImageLocation = "https://media.discordapp.net/attachments/859570021599412236/859934248541356112/unknown.png";
+                    pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859570021599412236/859934248541356112/unknown.png";
                     richTextBox1.Text = "Now we're ready to update! Click the button to go to the Settings app and click check now, if everything went well, you should see downloading Windows 11 Insider Preview, but dont leave just yet, we still need to bypass the requirements!";
                     button1.Text = "Settings";
                     break;
                 case 3:
                     button1.Text = "Replace";
                     label1.Text = "Replace appraiserres.dll >";
-                    pictureBox1.ImageLocation = "https://media.discordapp.net/attachments/859934909607313428/859947549775495168/ThisButBordered.png";
+                    pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859934909607313428/860124553342353418/unknown.png";
                     richTextBox1.Text = "Next up, you will have to wait for the install to fail. Once the installation window says install failed due to TPM 2.0 and/or Secure Boot, close that and click Replace.";
                     button3.Text = "Next >";
                     break;
