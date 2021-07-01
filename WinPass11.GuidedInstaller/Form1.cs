@@ -119,7 +119,7 @@ namespace winPass11_guided_install
                 case 2:
                     label1.Text = "Update Settings >";
                     pictureBox1.ImageLocation = "https://media.discordapp.net/attachments/859570021599412236/859934248541356112/unknown.png";
-                    richTextBox1.Text = "Now we're ready to update! Click the button to go to the Settings app and click check now, if everything went well, you should see Downloading Windows 11 Insider Preview, but dont leave just yet, we still need to bypass the requirements!";
+                    richTextBox1.Text = "Now we're ready to update! Click the button to go to the Settings app and click check now, if everything went well, you should see downloading Windows 11 Insider Preview, but dont leave just yet, we still need to bypass the requirements!";
                     button1.Text = "Settings";
                     break;
                 case 3:
@@ -132,7 +132,7 @@ namespace winPass11_guided_install
                 case 4:
                     label1.Text = "Update Settings >";
                     pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859934909607313428/859960424090173460/unknown.png";
-                    richTextBox1.Text = "This is the last step! Go back to the update screen and click \"Check for Updates\", \"Fix issues\", or whatever there is in place of the button. (There is a chance the download just continues.) After this, it should work and it is safe to close this application!";
+                    richTextBox1.Text = "This is the last step! Go back to the update screen and click \"Check for Updates\", \"Fix issues\", or whatever there is in place of the button. (There is a chance the download just continues) After this, it should work and it is safe to close this application!";
                     button3.Text = "Finish";
                     button1.Text = "Settings";
                     break;
