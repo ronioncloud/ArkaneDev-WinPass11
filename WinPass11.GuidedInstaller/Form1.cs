@@ -30,12 +30,13 @@ namespace winPass11_guided_install
                 case 0:
                     if (File.Exists("C:\\Users\\Default\\AppData\\Local\\Microsoft\\Windows\\WSUS\\setupconfig.ini")) // clean up old setup
                         File.Delete("C:\\Users\\Default\\AppData\\Local\\Microsoft\\Windows\\WSUS\\setupconfig.ini");
+                    MessageBox.Show("Cleaned up past installs");
                     break;
                 case 1:
                     Process _process;
                     _process = Process.Start("regedit.exe", "/s files\\regtweaks.reg"); // Location of the modified registry file
                     _process.WaitForExit();
-                    Console.WriteLine("Exit");
+                    MessageBox.Show("Applied registry tweaks");
                     break;
                 case 3:
                     if (File.Exists("C:\\$WINDOWS.~BT\\Sources\\AppraiserRes.dll"))
@@ -49,6 +50,7 @@ namespace winPass11_guided_install
                     {
                         WebClient downloader = new WebClient();
                         downloader.DownloadFile("https://github.com/CodeProf14/Fix-TPM/blob/main/Fix%20TPM/appraiserres.dll?raw=true", "C:\\$WINDOWS.~BT\\Sources\\AppraiserRes.dll");
+                        MessageBox.Show("Downloaded and replaced AppraiserRes.dll");
                     } catch
                     {
                         MessageBox.Show("Failed to download file :(");
@@ -106,23 +108,27 @@ namespace winPass11_guided_install
                     label1.Text = "Apply registry tweaks >";
                     button1.Text = "Apply";
                     button1.Enabled = true;
+                    pictureBox1.ImageLocation = "";
                     richTextBox1.Text = "This stage will apply our registry tweaks. The tweaks applied here will bypass the TPM 2.0 and Secure Boot checks.\nBefore you apply them, ensure you are at least in the release channel.";
                     break;
                 case 2:
                     button1.Enabled = false;
                     label1.Text = "Refer to image and box for directions ^";
-                    richTextBox1.Text = "Now we are at the stage to update the system, this stage is simple.\nFirst go to Settings -> Update and security -> Windows Insider Program, and ensure you are in the Dev Channel.\nRestart if you weren't. Scroll up and click windows update in the left bar and click check now, if everything went well\nyou should see downloading Windows 11 Insider Preview, but dont leave just yet, we still need to bypass the\nrequirements!";
+                    pictureBox1.ImageLocation = "https://media.discordapp.net/attachments/859570021599412236/859934248541356112/unknown.png";
+                    richTextBox1.Text = "Now we are at the stage to update the system, this stage is simple.\nFirst go to Settings -> Update and security -> Windows Insider Program, and ensure you are in the Dev Channel.\nRestart if you weren't. Scroll up and click windows update in the left bar and click check now, if everything went well\nyou should see downloading Windows 11 Insider Preview, but don't leave just yet, we still need to bypass the requirements!";
                     break;
                 case 3:
                     button1.Enabled = true;
                     button1.Text = "Replace";
                     label1.Text = "Replace appraiserres.dll >";
-                    richTextBox1.Text = "Next up, you will have to wait for the install to fail, sounds cruel right? Once the window that says install failed due to TPM 2.0,\nclose that out and click this button.";
+                    pictureBox1.ImageLocation = "https://media.discordapp.net/attachments/859934909607313428/859947549775495168/ThisButBordered.png";
+                    richTextBox1.Text = "Next up, you will have to wait for the install to fail, Once the window that says install failed due to TPM 2.0 (or other causes), Close that out and click \"Replace\" on this screen.";
                     button3.Text = "Next >";
                     break;
                 case 4:
                     button1.Enabled = false;
                     label1.Text = "Refer to image and box for directions ^";
+                    pictureBox1.ImageLocation = "";
                     richTextBox1.Text = "This is the last step! All that needs to be done is for you to go back to the update screen and click \"Check for Updates\" or \"Fix now\" or whatever there is in place of the button. After this is should work and it is safe to close this application!";
                     button3.Text = "Finish";
                     break;
