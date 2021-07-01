@@ -25,6 +25,7 @@ namespace winPass11_guided_install
 
         private void button1_Click(object sender, EventArgs e)
         {
+            ProcessStartInfo sInfo = new ProcessStartInfo("ms-settings:windowsupdate");
             switch (progress)
             {
                 case 0:
@@ -36,6 +37,9 @@ namespace winPass11_guided_install
                     _process = Process.Start("regedit.exe", "/s files\\regtweaks.reg"); // Location of the modified registry file
                     _process.WaitForExit();
                     Console.WriteLine("Exit");
+                    break;
+                case 2:
+                    Process.Start(sInfo);
                     break;
                 case 3:
                     if (File.Exists("C:\\$WINDOWS.~BT\\Sources\\AppraiserRes.dll"))
@@ -53,6 +57,10 @@ namespace winPass11_guided_install
                     {
                         MessageBox.Show("Failed to download file :(");
                     }
+                    break;
+                case 4:
+                    
+                    Process.Start(sInfo);
                     break;
             }
         }
@@ -101,23 +109,20 @@ namespace winPass11_guided_install
                     label1.Text = "Clean Previous Installations >";
                     pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859934909607313428/859962905813581884/Updates.png";
                     button1.Text = "Clean";
-                    button1.Enabled = true;
                     break;
                 case 1:
                     label1.Text = "Apply registry tweaks >";
                     pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859934909607313428/859964793774145536/Logo.png";
                     button1.Text = "Apply";
-                    button1.Enabled = true;
                     richTextBox1.Text = "This stage will apply our registry tweaks. The tweaks applied here will bypass the TPM 2.0 and Secure Boot checks. Before you apply them, ensure you are at least in the Release channel. Restart if necessary.";
                     break;
                 case 2:
-                    button1.Enabled = false;
-                    label1.Text = "Refer to image and box for directions";
+                    label1.Text = "Update Settings >";
                     pictureBox1.ImageLocation = "https://media.discordapp.net/attachments/859570021599412236/859934248541356112/unknown.png";
-                    richTextBox1.Text = "Now we're ready to update, this is simple. Go to Settings > Windows Update > Windows Insider Program.\nEnsure you are now in the Dev Channel. Scroll up and click Windows Update in the left bar and click check now, if everything went well, you should see downloading Windows 11 Insider Preview, but dont leave just yet, we still need to bypass the requirements!";
+                    richTextBox1.Text = "Now we're ready to update, this is simple. Click the button to go to the settings app and click check now, if everything went well, you should see downloading Windows 11 Insider Preview, but dont leave just yet, we still need to bypass the requirements!";
+                    button1.Text = "Settings";
                     break;
                 case 3:
-                    button1.Enabled = true;
                     button1.Text = "Replace";
                     label1.Text = "Replace appraiserres.dll >";
                     pictureBox1.ImageLocation = "https://media.discordapp.net/attachments/859934909607313428/859947549775495168/ThisButBordered.png";
@@ -125,11 +130,11 @@ namespace winPass11_guided_install
                     button3.Text = "Next >";
                     break;
                 case 4:
-                    button1.Enabled = false;
-                    label1.Text = "Refer to image and box for directions";
+                    label1.Text = "Update Settings >";
                     pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859934909607313428/859960424090173460/unknown.png";
                     richTextBox1.Text = "This is the last step! All that needs to be done is for you to go back to the update screen and click \"Check for Updates\", \"Fix issues\", or whatever there is in place of the button. (There is a chance the download just continues) After this is should work and it is safe to close this application!";
                     button3.Text = "Finish";
+                    button1.Text = "Settings";
                     break;
                 case 5:
                     Application.Exit();
