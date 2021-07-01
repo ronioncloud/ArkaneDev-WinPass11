@@ -10,7 +10,7 @@
 ## Installation
 * Download the [latest release](https://github.com/project-winpass11/WinPass11.GuidedInstaller/releases).
 * Unzip the `{Version}_Release.zip` or `{Version}_Debug.zip` archives in file in file explorer. (This depends if you want debug points or not)
-* Execute the program named: `WinPass11.GuidedInstall.exe` as administrator. (You should be asked by UAC)
+* Execute the program named: `WinPass11.GuidedInstall.exe` as administrator. (You should be asked by UAC to elevate permission)
 
 ## Contributing
 When your machine is ready for development, take a look at CONTRIBUTING.md to see how to get your changes merged in.
