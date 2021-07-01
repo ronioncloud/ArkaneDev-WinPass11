@@ -4,9 +4,6 @@
 
 🔑 [WinPass11](https://github.com/project-winpass11) Guided Installer is a tool for installing Windows 11 on unsupported hardware through a walkthrough process. Our goal is for the end-user to easily run a single executable and have access to Windows 11 through the dev channel with no worries about your unsupported hardware. This program will support bypassing unsupported processors, the TPM 2.0 requirement, the secure boot check and hopefully more!
 
-## Prerequisites
-* [Microsoft .NET Core 3.1](https://dotnet.microsoft.com/download/dotnet/3.1)
-
 ## Installation
 * Download the [latest release](https://github.com/project-winpass11/WinPass11.GuidedInstaller/releases).
 * Unzip the `{Version}_Release.zip` or `{Version}_Debug.zip` archives in file in file explorer. (This depends if you want debug points or not)
