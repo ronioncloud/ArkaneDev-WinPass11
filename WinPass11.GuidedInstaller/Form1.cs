@@ -47,7 +47,7 @@ namespace winPass11_guided_install
                         File.Delete("C:\\$WINDOWS.~BT\\Sources\\AppraiserRes.dll");
                     } else
                     {
-                        MessageBox.Show("Hey! You pressed the button to early, it seems as if the installer hasn't downloaded the file we need to replace yet... Try again after reading the directions");
+                        MessageBox.Show("Hey! You pressed the button to early, it seems as if the installer hasn't downloaded the file we need to replace yet... Try again after reading the directions.");
                     }
                     try
                     {
