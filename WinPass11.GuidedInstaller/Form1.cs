@@ -105,7 +105,7 @@ namespace winPass11_guided_install
             switch (progress)
             {
                 case 0:
-                    richTextBox1.Text = "If you have previously installed Windows 11 using WinPass11 or attempted to, you should probably click this button, if not, it doesn't hurt to click it regardless.";
+                    richTextBox1.Text = "If you have previously installed Windows 11 using WinPass11 or attempted to, you should probably click this button. If not, it doesn't hurt to click it regardless.";
                     label1.Text = "Clean Previous Installations >";
                     pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859934909607313428/859962905813581884/Updates.png";
                     button1.Text = "Clean";
@@ -114,25 +114,25 @@ namespace winPass11_guided_install
                     label1.Text = "Apply registry tweaks >";
                     pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859934909607313428/859964793774145536/Logo.png";
                     button1.Text = "Apply";
-                    richTextBox1.Text = "This stage will apply our registry tweaks. The tweaks applied here will bypass the TPM 2.0 and Secure Boot checks. Before you apply them, ensure you are at least in the Release channel. Restart if necessary.";
+                    richTextBox1.Text = "This stage will apply our registry tweaks. The tweaks applied here will bypass the TPM 2.0 and Secure Boot checks. Before you apply them, ensure you are at least in the Release Preview channel. Restart if necessary.";
                     break;
                 case 2:
                     label1.Text = "Update Settings >";
                     pictureBox1.ImageLocation = "https://media.discordapp.net/attachments/859570021599412236/859934248541356112/unknown.png";
-                    richTextBox1.Text = "Now we're ready to update, this is simple. Click the button to go to the settings app and click check now, if everything went well, you should see downloading Windows 11 Insider Preview, but dont leave just yet, we still need to bypass the requirements!";
+                    richTextBox1.Text = "Now we're ready to update! Click the button to go to the Settings app and click check now, if everything went well, you should see Downloading Windows 11 Insider Preview, but dont leave just yet, we still need to bypass the requirements!";
                     button1.Text = "Settings";
                     break;
                 case 3:
                     button1.Text = "Replace";
                     label1.Text = "Replace appraiserres.dll >";
                     pictureBox1.ImageLocation = "https://media.discordapp.net/attachments/859934909607313428/859947549775495168/ThisButBordered.png";
-                    richTextBox1.Text = "Next up, you will have to wait for the install to fail. Once the window that says install failed due to TPM 2.0, close that out and click Replace.";
+                    richTextBox1.Text = "Next up, you will have to wait for the install to fail. Once the installation window says install failed due to TPM 2.0 and/or Secure Boot, close that and click Replace.";
                     button3.Text = "Next >";
                     break;
                 case 4:
                     label1.Text = "Update Settings >";
                     pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859934909607313428/859960424090173460/unknown.png";
-                    richTextBox1.Text = "This is the last step! All that needs to be done is for you to go back to the update screen and click \"Check for Updates\", \"Fix issues\", or whatever there is in place of the button. (There is a chance the download just continues) After this is should work and it is safe to close this application!";
+                    richTextBox1.Text = "This is the last step! Go back to the update screen and click \"Check for Updates\", \"Fix issues\", or whatever there is in place of the button. (There is a chance the download just continues.) After this, it should work and it is safe to close this application!";
                     button3.Text = "Finish";
                     button1.Text = "Settings";
                     break;
