@@ -16,6 +16,6 @@ When your machine is ready for development, take a look at CONTRIBUTING.md to se
 WinPass11.WinService is licensed by project-winpass11 under the Apache License. (see LICENSE). The usage of third-party packages and programs is determined by the terms of their individual licenses.
 
 
-## Old repo
+## Old Repository
 
-If you need the code for an older version, the code for that was accidentally overriten during a cleanup but was replaced [here](https://github.com/project-winpass11/guided-installer-precleanup)
+If you need the code for an older version, the code for that was accidentally overriten during deletion mishap. See previous code [here](https://github.com/project-winpass11/guided-installer-precleanup).
