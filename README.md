@@ -2,12 +2,12 @@
 
 **Join us on Discord**: https://discord.gg/bD2TMR8t29
 
-🔑 [WinPass11](https://github.com/project-winpass11) Guided Installer is a tool for installing Windows 11 on unsupported hardware through a walkthrough process. Our goal is for the end-user to easily run a single executable and have access to Windows 11 through the dev channel with no worries about your unsupported hardware. This program will support bypassing unsupported processors, the TPM 2.0 requirement, the secure boot check and hopefully more!
+🔑 [WinPass11](https://github.com/project-winpass11) Guided Installer is a tool for installing Windows 11 on unsupported hardware through a walkthrough process. Our goal is for the end-user to easily run a single executable and have access to Windows 11 through the dev channel with no worries about your unsupported hardware. This program will supports bypassing all of the Windows 11 requirements!
 
 ## Installation
 * Download the [latest release](https://github.com/project-winpass11/WinPass11.GuidedInstaller/releases).
-* Unzip the `{Version}_Release.zip` or `{Version}_Debug.zip` archives in file in file explorer. (This depends if you want debug points or not)
-* Execute the program named: `WinPass11.GuidedInstall.exe` as administrator. (You should be asked by UAC to elevate permission)
+* Unzip the `WinPass11.GuidedInstaller_{version}.exe` archives in file in file explorer.
+* Execute the program named: `WinPass11.GuidedInstall.exe`. You should be asked by UAC to run as administrator, if not re-run as administrator.
 
 ## Contributing
 When your machine is ready for development, take a look at CONTRIBUTING.md to see how to get your changes merged in.
