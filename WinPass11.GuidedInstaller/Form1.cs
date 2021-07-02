@@ -18,29 +18,27 @@ namespace winPass11_guided_install
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
             ProcessStartInfo sInfo = new ProcessStartInfo("ms-settings:windowsupdate");
             switch (progress)
             {
+                // Clean up old setup
                 case 0:
-                    if (File.Exists("C:\\Users\\Default\\AppData\\Local\\Microsoft\\Windows\\WSUS\\setupconfig.ini")) // clean up old setup
+                    if (File.Exists("C:\\Users\\Default\\AppData\\Local\\Microsoft\\Windows\\WSUS\\setupconfig.ini"))
                         File.Delete("C:\\Users\\Default\\AppData\\Local\\Microsoft\\Windows\\WSUS\\setupconfig.ini");
                     break;
                 case 1:
                     try
                     {
+                        // Download the Registry Twekas
                         WebClient downloader = new WebClient();
                         downloader.DownloadFile("https://raw.githubusercontent.com/project-winpass11/WinPass11.GuidedInstaller/main/WinPass11.GuidedInstaller/files/regtweaks.reg", "C:\\Windows\\Temp\\regtweaks.reg");
                     }
+                    // Create an error box if download fails
                     catch
                     {
-                        MessageBox.Show("Failed to download file :(");
+                        MessageBox.Show(":( :: Failed to download file.");
                     }
                     Process _process;
                     _process = Process.Start("regedit.exe", "/s C:\\Windows\\Temp\\regtweaks.reg"); // Location of the modified registry file
@@ -51,20 +49,25 @@ namespace winPass11_guided_install
                     Process.Start(sInfo);
                     break;
                 case 3:
+                    // Clean up old setup
                     if (File.Exists("C:\\$WINDOWS.~BT\\Sources\\AppraiserRes.dll"))
-                    { // clean up old setup
-                        File.Delete("C:\\$WINDOWS.~BT\\Sources\\AppraiserRes.dll");
-                    } else
                     {
-                        MessageBox.Show("Hey! You pressed the button to early, it seems as if the installer hasn't downloaded the file we need to replace yet... Try again after reading the directions.");
+                        File.Delete("C:\\$WINDOWS.~BT\\Sources\\AppraiserRes.dll");
+                    }
+                    else
+                    // Make an error box if the reuestion AppraiserRes.dll file doesn't exist yet
+                    {
+                        MessageBox.Show("It seems as if the installer hasn't yet downloaded the file we need to replace yet... Try again after reading the directions.");
                     }
                     try
                     {
                         WebClient downloader = new WebClient();
                         downloader.DownloadFile("https://github.com/CodeProf14/Fix-TPM/blob/main/Fix%20TPM/appraiserres.dll?raw=true", "C:\\$WINDOWS.~BT\\Sources\\AppraiserRes.dll");
-                    } catch
+                    }
+                    // Create an error box if download fails
+                    catch
                     {
-                        MessageBox.Show("Failed to download file :(");
+                        MessageBox.Show(":( :: Failed to download file.");
                     }
                     break;
                 case 4:
@@ -76,13 +79,10 @@ namespace winPass11_guided_install
 
         private void button2_Click(object sender, EventArgs e)
         {
+            // Close the application
             Application.Exit();
         }
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -109,12 +109,13 @@ namespace winPass11_guided_install
             }
             loadNext();
         }
+        // Visual changes for every stage in the process of installation
         public void loadNext()
         {
             switch (progress)
             {
                 case 0:
-                    richTextBox1.Text = "If you have previously installed Windows 11 using WinPass11 or attempted to, you should probably click this button. If not, it doesn't hurt to click it regardless.";
+                    richTextBox1.Text = "If you have previously attempted to use WinPass11 , you should probably click clean. If not, it doesn't hurt to click it regardless.";
                     label1.Text = "Clean Previous Installations >";
                     pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859934909607313428/859962905813581884/Updates.png";
                     button1.Text = "Clean";
@@ -149,11 +150,6 @@ namespace winPass11_guided_install
                     Application.Exit();
                     break;
             }
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
