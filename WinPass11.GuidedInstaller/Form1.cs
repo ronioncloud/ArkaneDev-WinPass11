@@ -33,8 +33,17 @@ namespace winPass11_guided_install
                         File.Delete("C:\\Users\\Default\\AppData\\Local\\Microsoft\\Windows\\WSUS\\setupconfig.ini");
                     break;
                 case 1:
+                    try
+                    {
+                        WebClient downloader = new WebClient();
+                        downloader.DownloadFile("https://raw.githubusercontent.com/project-winpass11/WinPass11.GuidedInstaller/main/WinPass11.GuidedInstaller/files/regtweaks.reg", "C:\\Windows\\Temp\\regtweaks.reg");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Failed to download file :(");
+                    }
                     Process _process;
-                    _process = Process.Start("regedit.exe", "/s files\\regtweaks.reg"); // Location of the modified registry file
+                    _process = Process.Start("regedit.exe", "/s C:\\Windows\\Temp\\regtweaks.reg"); // Location of the modified registry file
                     _process.WaitForExit();
                     Console.WriteLine("Exit");
                     break;
