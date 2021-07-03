@@ -54,7 +54,7 @@ namespace winPass11_guided_install
                     {
                         // Download the Registry Twekas
                         WebClient downloader = new WebClient();
-                        downloader.DownloadFile("https://raw.githubusercontent.com/project-winpass11/WinPass11.GuidedInstaller/main/WinPass11.GuidedInstaller/files/tweaks.reg", $@"{sysRoot}\Temp\tweaks.reg");
+                        downloader.DownloadFile("https://raw.githubusercontent.com/project-winpass11/WinPass11.GuidedInstaller/main/WinPass11.GuidedInstaller/files/regtweaks.reg", $@"{sysRoot}\Temp\regtweaks.reg");
                         MessageBox.Show("Successfully downloaded registry tweaks.", "WinPass11 Dialogue", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     // Create an error box if download fails
@@ -64,7 +64,7 @@ namespace winPass11_guided_install
                     }
                     try
                     {
-                        _process = Process.Start("regedit.exe", $@"/s {sysRoot}\Temp\tweaks.reg"); // Location of the modified registry file
+                        _process = Process.Start("regedit.exe", $@"/s {sysRoot}\Temp\regtweaks.reg"); // Location of the modified registry file
                         _process.WaitForExit();
                         Console.WriteLine("regedit exited with exit code of 0");
                     }
