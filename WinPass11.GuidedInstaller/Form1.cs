@@ -20,13 +20,18 @@ namespace winPass11_guided_install
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Process _process;
             ProcessStartInfo sInfo = new ProcessStartInfo("ms-settings:windowsupdate");
-            String sysDrive = Environment.GetEnvironmentVariable("SYSTEMDRIVE");
-            String sysRoot = Environment.GetEnvironmentVariable("SYSTEMROOT");
+            string sysDrive = Environment.GetEnvironmentVariable("SYSTEMDRIVE");
+            string sysRoot = Environment.GetEnvironmentVariable("SYSTEMROOT");
             switch (progress)
             {
-                // Clean up old setup
                 case 0:
+                    _process = Process.Start("http://github.com/project-winpass11/WinPass11.GuidedInstaller/");
+                    _process.WaitForExit();
+                    Console.WriteLine("process exited with exit code of 0");
+                    break;
+                case 1:
                     // Delete old setups if they exist
                     if (File.Exists($@"{sysDrive}\Users\Default\AppData\Local\Microsoft\Windows\WSUS\setupconfig.ini"))
                     {
@@ -48,8 +53,7 @@ namespace winPass11_guided_install
                         MessageBox.Show("No past setups detected.", "WinPass11 Dialogue", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     break;
-                case 1:
-                    Process _process;
+                case 2:
                     try
                     {
                         // Download the Registry Twekas
@@ -74,7 +78,7 @@ namespace winPass11_guided_install
                     }
 
                     break;
-                case 2:
+                case 3:
                     try
                     {
                         Process.Start(sInfo);
@@ -84,7 +88,7 @@ namespace winPass11_guided_install
                         MessageBox.Show("Failed to open ms-settings:windowsupdate", "WinPass11 Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     break;
-                case 3:
+                case 4:
                     // Delete the old DLL file
                     if (File.Exists($@"{sysDrive}\$WINDOWS.~BT\Sources\AppraiserRes.dll"))
                     {
@@ -113,7 +117,7 @@ namespace winPass11_guided_install
                         MessageBox.Show("Failed to download patched file: AppraiserRes.dll", "WinPass11 Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     break;
-                case 4:
+                case 5:
                     try
                     {
                         Process.Start(sInfo);
@@ -165,38 +169,44 @@ namespace winPass11_guided_install
             switch (progress)
             {
                 case 0:
+                    richTextBox1.Text = "If you downloaded this from any other source than the GitHub repository or GitHub io page, there is a possibility of the program being infected with malware or outdated. We are not responsible for damage to your system, USE AT YOUR OWN RISK!";
+                    label1.Text = "Go to GitHub repository >";
+                    pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859934909607313428/859964793774145536/Logo.png";
+                    button1.Text = "GitHub";
+                    break;
+                case 1:
                     richTextBox1.Text = "If you have previously attempted to install Windows 11 with WinPass11, you should probably click clean. If not, it doesn't hurt to click it regardless.";
                     label1.Text = "Clean Previous Installations >";
                     pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859934909607313428/859962905813581884/Updates.png";
                     button1.Text = "Clean";
                     break;
-                case 1:
+                case 2:
                     label1.Text = "Apply registry tweaks >";
                     pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859934909607313428/859964793774145536/Logo.png";
                     button1.Text = "Apply";
                     richTextBox1.Text = "This stage will apply our registry tweaks. The tweaks applied here will bypass the TPM 2.0 and Secure Boot checks. Before you apply them, ensure you are at least in the Release Preview channel. Restart if necessary.";
                     break;
-                case 2:
+                case 3:
                     label1.Text = "Update Settings >";
                     pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859570021599412236/859934248541356112/unknown.png";
                     richTextBox1.Text = "Now we're ready to update! Click the button to go to the Settings app and click check now, if everything went well, you should see downloading Windows 11 Insider Preview, but dont leave just yet, we still need to bypass the requirements!";
                     button1.Text = "Settings";
                     break;
-                case 3:
+                case 4:
                     button1.Text = "Replace";
-                    label1.Text = "Replace appraiserres.dll >";
+                    label1.Text = "Replace AppraiserRes.dll >";
                     pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859934909607313428/860124553342353418/unknown.png";
                     richTextBox1.Text = "Next up, you will have to wait for the install to fail. Once the installation window says install failed due to TPM 2.0 and/or Secure Boot, close that and click Replace.";
                     button3.Text = "Next >";
                     break;
-                case 4:
+                case 5:
                     label1.Text = "Update Settings >";
                     pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859934909607313428/859960424090173460/unknown.png";
                     richTextBox1.Text = "This is the last step! Go back to the update screen and click \"Check for Updates\", \"Fix issues\", or whatever there is in place of the button. (There is a chance the download just continues) After this, it should work and it is safe to close this application!";
                     button3.Text = "Finish";
                     button1.Text = "Settings";
                     break;
-                case 5:
+                case 6:
                     Application.Exit();
                     break;
             }
