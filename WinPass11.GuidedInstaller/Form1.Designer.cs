@@ -48,7 +48,6 @@
             this.label2.Size = new System.Drawing.Size(217, 21);
             this.label2.TabIndex = 5;
             this.label2.Text = "WinPass11 Guided installer";
-            //this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // pictureBox1
             // 
@@ -68,7 +67,6 @@
             this.label1.Size = new System.Drawing.Size(162, 15);
             this.label1.TabIndex = 0;
             this.label1.Text = "Clean Previous Installations >";
-            // this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button3
             // 
@@ -128,7 +126,6 @@
             this.richTextBox1.Text = "If you have previously installed Windows 11 using WinPass11 or attempted to, you " +
     "should probably click this button, if not, it doesn\'t hurt to click it regardles" +
     "s.";
-            // this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // Form1
             // 
@@ -145,7 +142,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form1";
-            this.Text = "WinPass11 Setup";
+            this.Text = "WinPass11 Guided Installer";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);

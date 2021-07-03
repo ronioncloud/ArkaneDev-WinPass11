@@ -21,58 +21,107 @@ namespace winPass11_guided_install
         private void button1_Click(object sender, EventArgs e)
         {
             ProcessStartInfo sInfo = new ProcessStartInfo("ms-settings:windowsupdate");
+            String sysDrive = Environment.GetEnvironmentVariable("SYSTEMDRIVE");
+            String sysRoot = Environment.GetEnvironmentVariable("SYSTEMROOT");
             switch (progress)
             {
                 // Clean up old setup
                 case 0:
-                    if (File.Exists("C:\\Users\\Default\\AppData\\Local\\Microsoft\\Windows\\WSUS\\setupconfig.ini"))
-                        File.Delete("C:\\Users\\Default\\AppData\\Local\\Microsoft\\Windows\\WSUS\\setupconfig.ini");
+                    // Delete old setups if they exist
+                    if (File.Exists($@"{sysDrive}\Users\Default\AppData\Local\Microsoft\Windows\WSUS\setupconfig.ini"))
+                    {
+                        // Try to delete old setups
+                        try
+                        {
+                            File.Delete($@"{sysDrive}\Users\Default\AppData\Local\Microsoft\Windows\WSUS\setupconfig.ini");
+                            MessageBox.Show("Successfully cleaned up past setups.", "WinPass11 Dialogue", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        // Create an error box if download fails
+                        catch
+                        {
+                            MessageBox.Show("Failed to clean up past setup.", "WinPass11 Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                    else
+                    {
+                        // Create an message box if no old setups exist
+                        MessageBox.Show("No past setups detected.", "WinPass11 Dialogue", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                     break;
                 case 1:
+                    Process _process;
                     try
                     {
                         // Download the Registry Twekas
                         WebClient downloader = new WebClient();
-                        downloader.DownloadFile("https://raw.githubusercontent.com/project-winpass11/WinPass11.GuidedInstaller/main/WinPass11.GuidedInstaller/files/regtweaks.reg", "C:\\Windows\\Temp\\regtweaks.reg");
+                        downloader.DownloadFile("https://raw.githubusercontent.com/project-winpass11/WinPass11.GuidedInstaller/main/WinPass11.GuidedInstaller/files/tweaks.reg", $@"{sysRoot}\Temp\tweaks.reg");
+                        MessageBox.Show("Successfully downloaded registry tweaks.", "WinPass11 Dialogue", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     // Create an error box if download fails
                     catch
                     {
-                        MessageBox.Show(":( :: Failed to download file.");
+                        MessageBox.Show("Failed to download the registry tweaks", "WinPass11 Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    Process _process;
-                    _process = Process.Start("regedit.exe", "/s C:\\Windows\\Temp\\regtweaks.reg"); // Location of the modified registry file
-                    _process.WaitForExit();
-                    Console.WriteLine("Exit");
+                    try
+                    {
+                        _process = Process.Start("regedit.exe", $@"/s {sysRoot}\Temp\tweaks.reg"); // Location of the modified registry file
+                        _process.WaitForExit();
+                        Console.WriteLine("regedit exited with exit code of 0");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Failed to apply the registry tweaks.", "WinPass11 Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+
                     break;
                 case 2:
-                    Process.Start(sInfo);
+                    try
+                    {
+                        Process.Start(sInfo);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Failed to open ms-settings:windowsupdate", "WinPass11 Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     break;
                 case 3:
-                    // Clean up old setup
-                    if (File.Exists("C:\\$WINDOWS.~BT\\Sources\\AppraiserRes.dll"))
+                    // Delete the old DLL file
+                    if (File.Exists($@"{sysDrive}\$WINDOWS.~BT\Sources\AppraiserRes.dll"))
                     {
-                        File.Delete("C:\\$WINDOWS.~BT\\Sources\\AppraiserRes.dll");
+                        try
+                        {
+                            File.Delete($@"{sysDrive}\$WINDOWS.~BT\Sources\AppraiserRes.dll");
+                        }
+                        catch
+                        {
+                            MessageBox.Show("Failed to delete setup file: AppraiserRes.dll", "WinPass11 Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
                     }
                     else
-                    // Make an error box if the reuestion AppraiserRes.dll file doesn't exist yet
+                    // Make an error box if the required DLL file doesn't exist yet
                     {
-                        MessageBox.Show("It seems as if the installer hasn't yet downloaded the file we need to replace yet... Try again after reading the directions.");
+                        MessageBox.Show("The installer hasn't downloaded the file we need to replace yet.", "WinPass11 Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     try
                     {
                         WebClient downloader = new WebClient();
-                        downloader.DownloadFile("https://github.com/CodeProf14/Fix-TPM/blob/main/Fix%20TPM/appraiserres.dll?raw=true", "C:\\$WINDOWS.~BT\\Sources\\AppraiserRes.dll");
+                        downloader.DownloadFile("https://github.com/CodeProf14/Fix-TPM/blob/main/Fix%20TPM/appraiserres.dll?raw=true", $@"{sysDrive}\$WINDOWS.~BT\Sources\AppraiserRes.dll");
                     }
                     // Create an error box if download fails
                     catch
                     {
-                        MessageBox.Show(":( :: Failed to download file.");
+                        MessageBox.Show("Failed to download patched file: AppraiserRes.dll", "WinPass11 Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     break;
                 case 4:
-                    
-                    Process.Start(sInfo);
+                    try
+                    {
+                        Process.Start(sInfo);
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Failed to open ms-settings:windowsupdate", "WinPass11 Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                     break;
             }
         }
@@ -109,13 +158,14 @@ namespace winPass11_guided_install
             }
             loadNext();
         }
+
         // Visual changes for every stage in the process of installation
         public void loadNext()
         {
             switch (progress)
             {
                 case 0:
-                    richTextBox1.Text = "If you have previously attempted to use WinPass11 , you should probably click clean. If not, it doesn't hurt to click it regardless.";
+                    richTextBox1.Text = "If you have previously attempted to install Windows 11 with WinPass11, you should probably click clean. If not, it doesn't hurt to click it regardless.";
                     label1.Text = "Clean Previous Installations >";
                     pictureBox1.ImageLocation = "https://cdn.discordapp.com/attachments/859934909607313428/859962905813581884/Updates.png";
                     button1.Text = "Clean";
