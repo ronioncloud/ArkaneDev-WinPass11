@@ -8,7 +8,7 @@ using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace winPass11_guided_install
+namespace WinPass11.GuidedInstaller
 {
     public class Utils
     {
@@ -57,10 +57,10 @@ namespace winPass11_guided_install
 
             Uri uri = new Uri(url);
             string fileName = Path.GetFileName(uri.AbsolutePath);
-            string dest = Path.Combine(Form1.mTempWorkingDir, fileName);
+            string dest = Path.Combine(Form.mTempWorkingDir, fileName);
 
             if (File.Exists(dest))
-                dest = Path.Combine(Form1.mTempWorkingDir, Path.GetTempFileName() + ".png");            //TODO: Should fix png hardcode
+                dest = Path.Combine(Form.mTempWorkingDir, $"{Path.GetTempFileName()}.png");            //TODO: Should fix png hardcode
 
             try
             {

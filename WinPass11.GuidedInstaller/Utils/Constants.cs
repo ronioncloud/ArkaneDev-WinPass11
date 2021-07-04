@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace winPass11_guided_install
+namespace WinPass11.GuidedInstaller
 {
     public enum MessageBoxType
     {

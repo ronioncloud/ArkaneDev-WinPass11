@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace winPass11_guided_install
+namespace WinPass11.GuidedInstaller
 {
     static class Program
     {
@@ -17,7 +17,7 @@ namespace winPass11_guided_install
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form());
         }
     }
 }
