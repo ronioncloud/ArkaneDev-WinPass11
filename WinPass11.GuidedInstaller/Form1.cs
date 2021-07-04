@@ -17,6 +17,7 @@ namespace winPass11_guided_install
         public Form1()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void ShowMessageBox(string msg, MessageBoxType type)
