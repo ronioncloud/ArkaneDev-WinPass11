@@ -77,7 +77,7 @@
             this.button3.TabIndex = 4;
             this.button3.Text = "Next >";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.Click += new System.EventHandler(this.NextButtonClick);
             // 
             // button1
             // 
@@ -88,7 +88,7 @@
             this.button1.TabIndex = 1;
             this.button1.Text = "Clean";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.ActionButtonClick);
             // 
             // button2
             // 
@@ -99,7 +99,7 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "Cancel";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.Click += new System.EventHandler(this.ExitButtonClick);
             // 
             // button4
             // 
@@ -111,7 +111,7 @@
             this.button4.TabIndex = 9;
             this.button4.Text = "< Back";
             this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.Click += new System.EventHandler(this.BackButtonClick);
             // 
             // richTextBox1
             // 
@@ -123,6 +123,7 @@
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(558, 61);
             this.richTextBox1.TabIndex = 10;
+            this.richTextBox1.ReadOnly = true;
             this.richTextBox1.Text = "If you have previously installed Windows 11 using WinPass11 or attempted to, you " +
     "should probably click this button, if not, it doesn\'t hurt to click it regardles" +
     "s.";
