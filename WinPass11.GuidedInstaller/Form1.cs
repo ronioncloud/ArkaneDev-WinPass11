@@ -17,6 +17,8 @@ namespace winPass11_guided_install
         public Form1()
         {
             InitializeComponent();
+
+            this.StartPosition = FormStartPosition.CenterScreen;
             this.MaximizeBox = false;
             this.FormBorderStyle = FormBorderStyle.FixedDialog;
         }
