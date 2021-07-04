@@ -29,8 +29,6 @@ namespace winPass11_guided_install
             }
             else
                 return 0;
-
-            ProcessStartInfo info = new ProcessStartInfo("");
         }
     }
 }
