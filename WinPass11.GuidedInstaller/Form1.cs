@@ -128,7 +128,7 @@ namespace winPass11_guided_install
 
                     try
                     {
-                        Utils.DownloadFile(Constants.Url.AppraiserRes, Path.Combine(sysDrive, @"WINDOWS.~BT\Sources\AppraiserRes.dll"));
+                        Utils.DownloadFile(Constants.Url.AppraiserRes, Path.Combine(sysDrive, @"WINDOWS.~BT\Sources\AppraiserRes.dll"), true);
                     }
                     catch // Create an error box if download fails
                     {
