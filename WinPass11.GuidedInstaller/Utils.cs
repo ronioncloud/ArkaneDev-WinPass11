@@ -1,7 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -29,8 +32,46 @@ namespace winPass11_guided_install
             }
             else
                 return 0;
+        }
 
-            ProcessStartInfo info = new ProcessStartInfo("");
+        public static void DownloadFile(string url, string dest, bool overwrite = false)
+        {
+            if (File.Exists(dest) && !overwrite)
+                return;
+
+            string dirName = Path.GetDirectoryName(dest);
+            if (!Directory.Exists(dirName))
+                Directory.CreateDirectory(dirName);
+
+            using (WebClient webClient = new WebClient())
+            {
+                webClient.DownloadFile(url, dest);
+            }
+        }
+
+        private static Dictionary<string, Image> mImagesDict = new Dictionary<string, Image>();
+        public static Image GetDownloadedImage(string url)
+        {
+            if (mImagesDict.ContainsKey(url))
+                return mImagesDict[url];
+
+            Uri uri = new Uri(url);
+            string fileName = Path.GetFileName(uri.AbsolutePath);
+            string dest = Path.Combine(Form1.mTempWorkingDir, fileName);
+
+            if (File.Exists(dest))
+                dest = Path.Combine(Form1.mTempWorkingDir, Path.GetTempFileName() + ".png");            //TODO: Should fix png hardcode
+
+            try
+            {
+                DownloadFile(url, dest);
+                mImagesDict.Add(url, Image.FromFile(dest));
+                return mImagesDict[url];
+            }
+            catch
+            {
+                return null;
+            }
         }
     }
 }
