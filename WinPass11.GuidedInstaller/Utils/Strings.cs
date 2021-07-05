@@ -26,7 +26,7 @@ namespace WinPass11.GuidedInstaller
             public static readonly string NoSetupsDetected       = "No past setups detected";
 
             public static readonly string RegApplyFailed         = "Failed to apply registry tweaks";
-            public static readonly string RegApplySuccess        = "Successfully applied registry tweaks";
+            public static readonly string RegApplySuccess        = "Failed to apply registry tweaks";
 
             public static readonly string WinUpdateOpenFailed    = "Failed to open Windows Update window";
 
