@@ -32,7 +32,7 @@
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.buttonLabel = new System.Windows.Forms.Label();
             this.nextButton = new System.Windows.Forms.Button();
-            this.mainButton = new System.Windows.Forms.Button();
+            this.actionButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             this.descriptionBox = new System.Windows.Forms.RichTextBox();
@@ -79,16 +79,16 @@
             this.nextButton.UseVisualStyleBackColor = true;
             this.nextButton.Click += new System.EventHandler(this.NextButtonClick);
             // 
-            // mainButton
+            // actionButton
             // 
-            this.mainButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainButton.Location = new System.Drawing.Point(235, 341);
-            this.mainButton.Name = "mainButton";
-            this.mainButton.Size = new System.Drawing.Size(75, 23);
-            this.mainButton.TabIndex = 1;
-            this.mainButton.Text = "Clean";
-            this.mainButton.UseVisualStyleBackColor = true;
-            this.mainButton.Click += new System.EventHandler(this.ActionButtonClick);
+            this.actionButton.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.actionButton.Location = new System.Drawing.Point(235, 341);
+            this.actionButton.Name = "actionButton";
+            this.actionButton.Size = new System.Drawing.Size(75, 23);
+            this.actionButton.TabIndex = 1;
+            this.actionButton.Text = "Clean";
+            this.actionButton.UseVisualStyleBackColor = true;
+            this.actionButton.Click += new System.EventHandler(this.ActionButtonClick);
             // 
             // cancelButton
             // 
@@ -139,7 +139,7 @@
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.titleLabel);
             this.Controls.Add(this.nextButton);
-            this.Controls.Add(this.mainButton);
+            this.Controls.Add(this.actionButton);
             this.Controls.Add(this.buttonLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Form";
@@ -157,7 +157,7 @@
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Label buttonLabel;
         private System.Windows.Forms.Button nextButton;
-        private System.Windows.Forms.Button mainButton;
+        private System.Windows.Forms.Button actionButton;
         private System.Windows.Forms.Button cancelButton;
         private System.Windows.Forms.Button backButton;
         private System.Windows.Forms.RichTextBox descriptionBox;

@@ -14,9 +14,9 @@ namespace WinPass11.GuidedInstaller
 
     public enum Page
     {
-        Welcome = 0,
+        Warning = 0,
         CleanPrev,
-        RegistryTweak,
+        ApplyTweaks,
         UpdateInit,
         ReplaceDll,
         UpdateFinal,
@@ -29,7 +29,7 @@ namespace WinPass11.GuidedInstaller
 
         public static class Url
         {
-            public const string GitRepo         = "https://github.com/project-winpass11/WinPass11.GuidedInstaller";
+            public const string GitHubRepo      = "https://github.com/project-winpass11/WinPass11.GuidedInstaller";
             public const string RegTweaks       = "https://raw.githubusercontent.com/project-winpass11/WinPass11.GuidedInstaller/main/WinPass11.GuidedInstaller/files/regtweaks.reg";
             public const string AppraiserRes    = "https://github.com/CodeProf14/Fix-TPM/blob/main/Fix%20TPM/appraiserres.dll?raw=true";
             public const string WinUpdate       = "ms-settings:windowsupdate";
