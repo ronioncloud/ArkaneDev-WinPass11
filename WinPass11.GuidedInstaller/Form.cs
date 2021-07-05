@@ -113,26 +113,17 @@ namespace WinPass11.GuidedInstaller
                         try
                         {
                             File.Delete(appraiserResPath);
+                            Utils.DownloadFile(Constants.Url.AppraiserRes, appraiserResPath, true);
                             ShowMessageBox(string.Format(Strings.Body.ReplaceSuccess, "AppraiserRes.dll"), MessageBoxType.Information);
                         }
                         catch
                         {
-                            ShowMessageBox(string.Format(Strings.Body.DeleteFailed, "AppraiserRes.dll"), MessageBoxType.Error);
+                            ShowMessageBox(string.Format(Strings.Body.ReplaceFailed, "AppraiserRes.dll"), MessageBoxType.Error);
                         }
                     }
                     else
-                    {   // Make an error box if the required DLL file doesn't exist yet
+                        // Make an error box if the required DLL file doesn't exist yet
                         ShowMessageBox(Strings.Body.InstallerNotDownloaded, MessageBoxType.Information);
-                    }
-
-                    try
-                    {
-                        Utils.DownloadFile(Constants.Url.AppraiserRes, appraiserResPath, true);
-                    }
-                    catch
-                    {   // Create an error box if download fails
-                        ShowMessageBox(string.Format(Strings.Body.DownloadFailed, "AppraiserRes.dll"), MessageBoxType.Error);
-                    }
                     break;
                 case Page.UpdateFinal:
                     try

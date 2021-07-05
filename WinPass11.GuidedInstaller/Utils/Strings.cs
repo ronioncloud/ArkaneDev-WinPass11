@@ -18,11 +18,13 @@ namespace WinPass11.GuidedInstaller
         public class Body
         {
             public static readonly string DeleteFailed           = "Failed to delete {0}";
+
             public static readonly string DownloadFailed         = "Failed to download {0}";
             public static readonly string DownloadSuccess        = "Successfully downloaded {0}";
 
-            public static readonly string InstallerNotDownloaded = "Windows Update hasn't downloaded the required file";
+            public static readonly string FileNotDownloaded      = "Windows Update hasn't downloaded the required file";
 
+            public static readonly string ReplaceFailed          = "Failed to replace {0}";
             public static readonly string ReplaceSuccess         = "Successfully replaced {0}";
 
             public static readonly string RegApplyFailed         = "Failed to apply registry tweaks";
