@@ -123,7 +123,7 @@ namespace WinPass11.GuidedInstaller
                     }
                     else
                         // Make an error box if the required DLL file doesn't exist yet
-                        ShowMessageBox(Strings.Body.InstallerNotDownloaded, MessageBoxType.Information);
+                        ShowMessageBox(Strings.Body.FileNotDownloaded, MessageBoxType.Information);
                     break;
                 case Page.UpdateFinal:
                     try
