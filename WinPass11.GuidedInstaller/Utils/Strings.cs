@@ -17,24 +17,24 @@ namespace WinPass11.GuidedInstaller
 
         public class Body
         {
-            public static readonly string DeleteFailed           = "Failed to delete {0}";
+            public static readonly string DeleteFailed           = "Failed to delete {0}.";
 
-            public static readonly string DownloadFailed         = "Failed to download {0}";
-            public static readonly string DownloadSuccess        = "Successfully downloaded {0}";
+            public static readonly string DownloadFailed         = "Failed to download {0}. Check your internet connection and try again.";
+            public static readonly string DownloadSuccess        = "Successfully downloaded {0}.";
 
-            public static readonly string FileNotDownloaded      = "Windows Update hasn't downloaded the required file";
+            public static readonly string FileNotDownloaded      = "Windows Update hasn't downloaded the required file.";
 
-            public static readonly string ReplaceFailed          = "Failed to replace {0}";
-            public static readonly string ReplaceSuccess         = "Successfully replaced {0}";
+            public static readonly string ReplaceFailed          = "Failed to replace {0}.";
+            public static readonly string ReplaceSuccess         = "Successfully replaced {0}.";
 
-            public static readonly string RegApplyFailed         = "Failed to apply registry tweaks";
-            public static readonly string RegApplySuccess        = "Successfully applied registry tweaks";
+            public static readonly string RegApplyFailed         = "Failed to apply registry tweaks.";
+            public static readonly string RegApplySuccess        = "Successfully applied registry tweaks.";
 
-            public static readonly string SetupCleanFailed       = "Failed to clean past setups";
-            public static readonly string SetupCleanSuccess      = "Successfully cleaned past setups";
-            public static readonly string NoSetupsDetected       = "No past setups detected";
+            public static readonly string SetupCleanFailed       = "Failed to clean up past setups.";
+            public static readonly string SetupCleanSuccess      = "Successfully cleaned up past setups.";
+            public static readonly string NoSetupsDetected       = "No past setups detected.";
 
-            public static readonly string WinUpdateOpenFailed    = "Failed to open Windows Update window";
+            public static readonly string WinUpdateOpenFailed    = "Failed to open the Windows Update window.";
         }
     }
 }
