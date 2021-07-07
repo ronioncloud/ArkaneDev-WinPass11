@@ -17,4 +17,4 @@ WinPass11.WinService is licensed by project-winpass11 under the Apache License. 
 
 ## Old Repository
 
-If you need the code for an older version, the code for that was accidentally overriten during deletion mishap. See previous code [here](https://github.com/project-winpass11/guided-installer-precleanup).
+If you need the code for an older version, the old code was accidentally overriten during mass deletion. See previous code [here](https://github.com/project-winpass11/guided-installer-precleanup).
