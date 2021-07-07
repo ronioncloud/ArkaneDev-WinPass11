@@ -183,7 +183,7 @@ namespace WinPass11.GuidedInstaller
             switch (mCurrentPage)
             {
                 case Page.Warning:
-                    descriptionBox.Text = "If you downloaded this from any other source than the GitHub repository or GitHub io page, there is a possibility of the program being infected with malware or outdated. We are not responsible for damage to your system. Please use at your own risk!";
+                    descriptionBox.Text = "If you downloaded this from any other source than the GitHub repository or GitHub.io page, the program may be outdated or infected with malware. We are not responsible for damage to your system. Please use at your own risk!";
                     buttonLabel.Text = "Go to GitHub repository >";
                     pictureBox.Image = Utils.GetDownloadedImage("https://cdn.discordapp.com/attachments/859934909607313428/859964793774145536/Logo.png");
                     actionButton.Text = "GitHub";
