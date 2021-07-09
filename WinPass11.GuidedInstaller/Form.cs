@@ -1,10 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Threading;
+using static winPass11_guided_install.AppraiserresHandler;
+using winPass11_guided_install;
 
 namespace WinPass11.GuidedInstaller
 {
@@ -145,7 +150,7 @@ namespace WinPass11.GuidedInstaller
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            loadNext();
+            //loadNext();
         }
 
         private void InitWorkingFolder()
@@ -161,69 +166,55 @@ namespace WinPass11.GuidedInstaller
 
         private void NextButtonClick(object sender, EventArgs e)
         {
-            mCurrentPage++;
-            loadNext();
-        }
-
-        private void BackButtonClick(object sender, EventArgs e)
-        {
-            if (mCurrentPage > Page.Warning)
+            DialogResult ask = MessageBox.Show("Are you sure you want to do this? You cannot undo this action", "Confirmation", MessageBoxButtons.YesNoCancel);
+            Process _process;
+            string sysRoot = Environment.GetEnvironmentVariable("SYSTEMROOT");
+            if (ask.Equals(DialogResult.Yes))
             {
-                mCurrentPage--;
-            }
+                //MessageBox.Show("Debug: User Clicked Yes");
+                try
+                {
+                    // Download the Registry Twekas
+                    WebClient downloader = new WebClient();
+                    downloader.DownloadFile("https://raw.githubusercontent.com/project-winpass11/WinPass11.GuidedInstaller/main/WinPass11.GuidedInstaller/files/regtweaks.reg", $@"{sysRoot}\Temp\regtweaks.reg");
+                    //MessageBox.Show("Successfully downloaded registry tweaks.", "WinPass11 Dialogue", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                // Create an error box if download fails
+                catch
+                {
+                    MessageBox.Show("Failed to download the registry tweaks", "WinPass11 Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                try
+                {
+                    _process = Process.Start("regedit.exe", $@"/s {sysRoot}\Temp\regtweaks.reg"); // Location of the modified registry file
+                    _process.WaitForExit();
+                    Console.WriteLine("regedit exited with exit code of 0");
+                }
+                catch
+                {
+                    MessageBox.Show("Failed to apply the registry tweaks.", "WinPass11 Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                int ret = Utils.StartProcess("UsoClient.exe", "StartInteractiveScan", true);
+                MessageBox.Show("Debug: Invoked System Update");
+                AppraiserresHandler obj = new AppraiserresHandler();
 
-            loadNext();
+                // Creating thread
+                // Using thread class
+                Thread thr = new Thread(new ThreadStart(obj.checkForExist));
+                thr.Start();
+            } 
+            else
+            {
+                MessageBox.Show("Debug: User Canceled action");
+            }
         }
+
+        
+
 
         // Visual changes for every stage in the process of installation
-        public void loadNext()
-        {
-            backButton.Enabled = mCurrentPage > Page.Warning;
-;
-            switch (mCurrentPage)
-            {
-                case Page.Warning:
-                    descriptionBox.Text = "If you downloaded this from any other source than the GitHub repository or GitHub.io page, the program may be outdated or infected with malware. We are not responsible for damage to your system. Please use at your own risk!";
-                    buttonLabel.Text = "Go to GitHub repository >";
-                    pictureBox.Image = Utils.GetDownloadedImage("https://cdn.discordapp.com/attachments/859934909607313428/859964793774145536/Logo.png");
-                    actionButton.Text = "GitHub";
-                    break;
-                case Page.CleanPrev:
-                    descriptionBox.Text = "If you have previously attempted to install Windows 11 with WinPass11, you should click clean now. If not, it won't affect the rest of the process installation.";
-                    buttonLabel.Text = "Clean Previous Installations >";
-                    pictureBox.Image = Utils.GetDownloadedImage("https://cdn.discordapp.com/attachments/859934909607313428/859962905813581884/Updates.png");
-                    actionButton.Text = "Clean";
-                    break;
-                case Page.ApplyTweaks:
-                    buttonLabel.Text = "Apply registry tweaks >";
-                    pictureBox.Image = Utils.GetDownloadedImage("https://cdn.discordapp.com/attachments/859934909607313428/859964793774145536/Logo.png");
-                    actionButton.Text = "Apply";
-                    descriptionBox.Text = "This stage will apply our registry tweaks. The tweaks applied here will bypass the TPM 2.0 and Secure Boot checks. Before you apply them, please ensure you are in the Release Preview channel. Restart if necessary.";
-                    break;
-                case Page.UpdateInit:
-                    buttonLabel.Text = "Update Settings >";
-                    pictureBox.Image = Utils.GetDownloadedImage("https://cdn.discordapp.com/attachments/859570021599412236/859934248541356112/unknown.png");
-                    descriptionBox.Text = "Now we're ready to update. Click the button to go to the Settings app and click check now, if everything went well, you should see downloading Windows 11 Insider Preview, but dont leave just yet, we still need to bypass the requirements.";
-                    actionButton.Text = "Settings";
-                    break;
-                case Page.ReplaceDll:
-                    actionButton.Text = "Replace";
-                    buttonLabel.Text = "Replace AppraiserRes.dll >";
-                    pictureBox.Image = Utils.GetDownloadedImage("https://cdn.discordapp.com/attachments/859934909607313428/860124553342353418/unknown.png");
-                    descriptionBox.Text = "Next up, you will have to wait for the install to fail. Once the installation window says install failed due to TPM 2.0 and/or Secure Boot, close that and click Replace.";
-                    nextButton.Text = "Next >";
-                    break;
-                case Page.UpdateFinal:
-                    buttonLabel.Text = "Update Settings >";
-                    pictureBox.Image = Utils.GetDownloadedImage("https://cdn.discordapp.com/attachments/859934909607313428/859960424090173460/unknown.png");
-                    descriptionBox.Text = "This is the last step! Go back to the update screen and click \"Check for Updates\" or \"Fix issues\". (There is a chance the download just continues or restarts) After this, it should work and it is safe to close this application!";
-                    nextButton.Text = "Finish";
-                    actionButton.Text = "Settings";
-                    break;
-                case Page.Last:
-                    Application.Exit();
-                    break;
-            }
-        }
+        private void titleLabel_Click(object sender, EventArgs e) { }
+        private void label1_Click(object sender, EventArgs e) { }
+        private void label2_Click(object sender, EventArgs e) { }
     }
 }
