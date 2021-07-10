@@ -1,8 +1,8 @@
-# WinPass11: Guided Installer
+# WinPass11: Auto
 
 **Join us on Discord**: https://discord.gg/bD2TMR8t29
 
-🔑 [WinPass11](https://github.com/project-winpass11) is a tool for installing Windows 11 on unsupported hardware in a guided "installer-like" format. Our goal is for the end-user to easily run a single executable and have access to Windows 11 through the dev channel without having to worry about unsupported hardware. This program supports bypassing all of the Windows 11 requirements!
+🔑 [WinPass11](https://github.com/project-winpass11) is a tool for installing Windows 11 on unsupported hardware in a one click installer. Our goal is for the end-user to easily run a single executable and have access to Windows 11 through the dev channel without having to worry about unsupported hardware. This program supports bypassing all of the Windows 11 requirements!
 
 ## Installation
 * Download the [latest release](https://github.com/project-winpass11/WinPass11.GuidedInstaller/releases).
@@ -12,7 +12,7 @@
 If you want to develop for WinPass11, take a look at CONTRIBUTING.md to see how to get your changes merged in.
 
 ## License
-WinPass11.WinService is licensed by project-winpass11 under the Apache License. (see LICENSE). The usage of third-party packages and programs is determined by the terms of their individual licenses.
+WinPass11-auto is licensed by winbyte under the Apache License. (see LICENSE). The usage of third-party packages and programs is determined by the terms of their individual licenses.
 
 
 ## Old Repository
