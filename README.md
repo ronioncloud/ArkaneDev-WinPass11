@@ -6,7 +6,7 @@
 
 ## Installation
 * Download the [latest release](https://github.com/winbyte-devs/WinPass11/releases).
-* Execute the program named: `WinPass11.GuidedInstaller-Guided_{version}.exe`. You should be asked by UAC to run as administrator, if not, re-run as administrator.
+* Execute the program named: `WinPass11-Guided_{version}.exe`. You should be asked by UAC to run as administrator, if not, re-run as administrator.
 
 ## Contributing
 If you want to develop for WinPass11, take a look at CONTRIBUTING.md to see how to get your changes merged in.
