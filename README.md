@@ -1,4 +1,4 @@
-# WinPass11: Guided **Archived please continue dev on auto branch**
+# WinPass11: Guided (Archived)
 
 [**Join us on Discord**](https://discord.gg/MGzEawjbv3)
 
