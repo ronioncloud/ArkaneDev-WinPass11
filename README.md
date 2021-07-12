@@ -17,4 +17,4 @@ WinPass11-guided is licensed by winbyte under the Apache License. (see LICENSE).
 
 ## Old Repository
 
-If you need the code for an older version, the old code was accidentally overwritten during mass deletion. See previous code [here](https://github.com/project-winpass11/guided-installer-precleanup).
+If you need the code for an older version, the old code was accidentally overwritten during mass deletion. See previous code [here](https://github.com/winpass11-archive/winpass11-old-archive).
