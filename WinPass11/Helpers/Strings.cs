@@ -30,6 +30,7 @@ namespace WinPass11.Helpers
 
             public static readonly string RegApplyFailed         = "Failed to apply registry tweaks.";
             public static readonly string RegApplySuccess        = "Successfully applied registry tweaks.";
+            public static readonly string RegFileNotDownloaded   = "Failed to apply non-existant file.";
         }
     }
 }
