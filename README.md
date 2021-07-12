@@ -12,9 +12,4 @@
 If you want to develop for WinPass11, take a look at CONTRIBUTING.md to see how to get your changes merged in.
 
 ## License
-WinPass11-auto is licensed by winbyte under the Apache License. (see LICENSE). The usage of third-party packages and programs is determined by the terms of their individual licenses.
-
-
-## Old Repository
-
-If you need the code for an older version, the old code was accidentally overwritten during mass deletion. See previous code [here](https://github.com/project-winpass11/guided-installer-precleanup).
+WinPass11 is licensed by winbyte under the Apache License. (see LICENSE). The usage of third-party packages and programs is determined by the terms of their individual licenses.
