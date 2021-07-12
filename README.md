@@ -1,6 +1,6 @@
 # WinPass11: Guided (Archived)
 
-Notice: WinPass11 Guided Installer is not under active development anymore, all work has shifted to WinPass11 auto
+***Notice***: WinPass11 Guided is not under active development anymore, all work has shifted to WinPass11 Auto.
 
 [**Join us on Discord**](https://discord.gg/MGzEawjbv3)
 
