@@ -40,18 +40,18 @@ namespace WinPass11
         private void InstallButtonClick(object sender, EventArgs e)
         {
             DialogResult result = MessageBox.Show(Strings.Body.InstallButtonDialog, "WinPass11 Confirmation", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            string regTweaksDownloadPath = string.Empty;
+            string regTweaksDownloadPath = $@"{mTempWorkingDir}\regtweaks.reg";
             if (result.Equals(DialogResult.Yes))
             {
                 try
                 {
-                    Utils.DownloadFile("https://raw.githubusercontent.com/project-winpass11/WinPass11.GuidedInstaller/main/WinPass11.GuidedInstaller/files/regtweaks.reg", regTweaksDownloadPath);
-                    Utils.ShowMessageBox(string.Format(Strings.Body.DownloadSuccess, "registry tweaks."), MessageBoxType.Error);
+                    Utils.DownloadFile(Constants.Url.RegTweaks, regTweaksDownloadPath);
+                    Utils.ShowMessageBox(string.Format(Strings.Body.DownloadSuccess, "registry tweaks"), MessageBoxType.Information);
                 }
                 // Create an error box if download fails
                 catch
                 {
-                    Utils.ShowMessageBox(string.Format(Strings.Body.DownloadFailed, "registry tweaks."), MessageBoxType.Error);
+                    Utils.ShowMessageBox(string.Format(Strings.Body.DownloadFailed, "registry tweaks"), MessageBoxType.Error);
                 }
                 if (File.Exists(regTweaksDownloadPath))
                 {

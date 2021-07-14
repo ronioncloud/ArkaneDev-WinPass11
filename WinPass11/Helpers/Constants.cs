@@ -12,11 +12,6 @@ namespace WinPass11.Helpers
         Error
     }
 
-    public enum Page
-    {
-        Main = 0
-    }
-
     public static class Constants
     {
         
