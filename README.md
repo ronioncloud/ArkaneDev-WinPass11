@@ -4,6 +4,8 @@
 
 🔑 [WinPass11](https://github.com/project-winpass11) is a tool for installing Windows 11 on unsupported hardware in a one click installer. Our goal is for the end-user to easily run a single executable and have access to Windows 11 through the dev channel without having to worry about unsupported hardware. This program supports bypassing all of the Windows 11 requirements!
 
+![Repo Image](https://raw.githubusercontent.com/ArkaneDev/WinPass11/main/RepoImage.png)
+
 ## Installation
 * Download the [latest release](https://github.com/project-winpass11/WinPass11.GuidedInstaller/releases).
 * Execute the program named: `WinPass11Auto.exe`. You should be asked by UAC to run as administrator, if not, re-run as administrator.
