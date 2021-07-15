@@ -1,6 +1,4 @@
-# WinPass11: Guided (Archived)
-
-***Notice***: WinPass11 Guided is not under active development anymore, all work has shifted to WinPass11 Auto.
+# WinPass11: Guided
 
 [**Join us on Discord**](https://discord.gg/TEFAbz2ZhW)
 
@@ -8,7 +6,7 @@
 
 ## Installation
 * Download the [latest release](https://github.com/winbyte-devs/WinPass11/releases).
-* Execute the program named: `WinPass11-Guided_{version}.exe`. You should be asked by UAC to run as administrator, if not, re-run as administrator.
+* Execute the program named: `WinPass11Guided.exe`. You should be asked by UAC to run as administrator, if not, re-run as administrator.
 
 ## Contributing
 If you want to develop for WinPass11, take a look at CONTRIBUTING.md to see how to get your changes merged in.
