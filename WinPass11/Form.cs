@@ -57,8 +57,8 @@ namespace WinPass11
                 {
                     try
                     {
-                        Utils.StartProcess("regedit.exe", $"/s {regTweaksDownloadPath}", true);
-                        Console.WriteLine("regedit exited with exit code of {0}");
+                        int ret = Utils.StartProcess("regedit.exe", $"/s {regTweaksDownloadPath}", true);
+                        Console.WriteLine("regedit exited with exit code of {0}", ret);
                         Utils.ShowMessageBox(Strings.Body.RegApplySuccess, MessageBoxType.Information);
                     }
                     // Create an error box if registry applicaation fails
@@ -71,7 +71,10 @@ namespace WinPass11
                 {
                     Utils.ShowMessageBox(Strings.Body.RegFileNotDownloaded, MessageBoxType.Error);
                 }
-                int ret = Utils.StartProcess("UsoClient.exe", "StartInteractiveScan", true);
+                string usoClient = "UsoClient";
+                int ust = Utils.StartProcess(usoClient, "StartInteractiveScan", true);
+                Console.WriteLine($"{usoClient} exited with exit code of {0}", ust);
+
                 // debug: MessageBox.Show("Invoked System Update");
                 Handlers.AppraiserRes obj = new Handlers.AppraiserRes();
 

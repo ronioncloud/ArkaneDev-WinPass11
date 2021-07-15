@@ -17,11 +17,21 @@ namespace WinPass11.Helpers
         {
             public void checkForExist()
             {
+                Utils.ShowMessageBox(string.Format(Strings.Body.WaitingForDownload, "AppraiserRes.dll"), MessageBoxType.Information);
                 while (!File.Exists(Constants.Path.AppraiserRes))
                 {
                     Thread.Sleep(500);
                 }
-                Thread.Sleep(3000); // Wait to make sure file is downloaded
+                try
+                {
+                    Thread.Sleep(3000); // Wait to make sure file is downloaded
+                    Utils.ShowMessageBox(string.Format(Strings.Body.SetupDownloaded, "AppraiserRes.dll"), MessageBoxType.Information);
+                    Utils.ShowMessageBox(string.Format(Strings.Body.ReplaceSuccess, "AppraiserRes.dll"), MessageBoxType.Information);
+                }
+                catch
+                {
+                    Utils.ShowMessageBox(string.Format(Strings.Body.ReplaceFailed, "AppraiserRes.dll"), MessageBoxType.Information);
+                }
                 while (IsFileLocked(new FileInfo(Constants.Path.AppraiserRes)))
                 {
                     foreach (var process in Process.GetProcessesByName("SetupHost.exe"))
@@ -65,7 +75,7 @@ namespace WinPass11.Helpers
                 }
                 catch (IOException)
                 {
-                    return true;
+                    Console.WriteLine("The file is locked by the updater.");
                 }
                 finally
                 {

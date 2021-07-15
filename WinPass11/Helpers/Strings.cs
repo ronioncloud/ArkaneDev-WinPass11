@@ -22,15 +22,21 @@ namespace WinPass11.Helpers
             public static readonly string DownloadFailed         = "Failed to download {0}. Check your internet connection and try again.";
             public static readonly string DownloadSuccess        = "Successfully downloaded {0}.";
 
-            public static readonly string FileNotDownloaded      = "Windows Update hasn't downloaded the required file.";
+            public static readonly string FileNotDownloaded      = "Windows Update hasn't downloaded {0}.";
 
             public static readonly string InstallButtonDialog    = "Are you sure you want to do this? You cannot undo this action.";
-
             public static readonly string InstallationCanceled   = "Installation canceled.";
 
             public static readonly string RegApplyFailed         = "Failed to apply registry tweaks.";
             public static readonly string RegApplySuccess        = "Successfully applied registry tweaks.";
             public static readonly string RegFileNotDownloaded   = "Failed to apply non-existant file.";
+
+            public static readonly string ReplaceSuccess         = "Successfully replaced {0}.";
+            public static readonly string ReplaceFailed          = "Failed to replace {0}.";
+
+            public static readonly string SetupDownloaded        = "Windows Update downloaded {0}.";
+
+            public static readonly string WaitingForDownload     = "Waiting for Windows Update to download {0}.";
         }
     }
 }
