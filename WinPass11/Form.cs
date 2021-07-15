@@ -90,9 +90,9 @@ namespace WinPass11
                     Utils.ShowMessageBox(Strings.Body.InstallationCanceled, MessageBoxType.Information);
                 }
             }
-            else if (selectionBox.Text == "Beta")
+            else if (selectionBox.Text == "Beta") // For future releases
             { }
-            else if (selectionBox.Text == "Release")
+            else if (selectionBox.Text == "Release") // For future releases
             { }
             else
             {
