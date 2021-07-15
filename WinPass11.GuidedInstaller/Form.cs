@@ -5,8 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using WinPass11Guided.Helpers;
 
-namespace WinPass11.GuidedInstaller
+namespace WinPass11Guided
 {
     public partial class Form : System.Windows.Forms.Form
     {

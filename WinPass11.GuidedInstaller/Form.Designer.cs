@@ -1,4 +1,4 @@
-﻿namespace WinPass11.GuidedInstaller
+﻿namespace WinPass11Guided
 {
     partial class Form
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WinPass11.GuidedInstaller
+namespace WinPass11Guided.Helpers
 {
     public enum MessageBoxType
     {
@@ -29,8 +29,8 @@ namespace WinPass11.GuidedInstaller
 
         public static class Url
         {
-            public const string GitHubRepo      = "https://github.com/project-winpass11/WinPass11.GuidedInstaller";
-            public const string RegTweaks       = "https://raw.githubusercontent.com/project-winpass11/WinPass11.GuidedInstaller/main/WinPass11.GuidedInstaller/files/regtweaks.reg";
+            public const string GitHubRepo      = "https://github.com/ArkaneDev/WinPass11";
+            public const string RegTweaks       = "https://raw.githubusercontent.com/ArkaneDev/WinPass11/main/WinPass11/files/regtweaks.reg";
             public const string AppraiserRes    = "https://github.com/CodeProf14/Fix-TPM/blob/main/Fix%20TPM/appraiserres.dll?raw=true";
             public const string WinUpdate       = "ms-settings:windowsupdate";
         }

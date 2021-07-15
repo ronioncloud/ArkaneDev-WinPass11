@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WinPass11.GuidedInstaller
+namespace WinPass11Guided
 {
     static class Program
     {
