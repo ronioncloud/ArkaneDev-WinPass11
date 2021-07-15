@@ -186,31 +186,31 @@ namespace WinPass11Guided
                 case Page.Warning:
                     descriptionBox.Text = "If you downloaded this from any other source than the GitHub repository or GitHub.io page, the program may be outdated or infected with malware. We are not responsible for damage to your system. Please use at your own risk!";
                     buttonLabel.Text = "Go to GitHub repository >";
-                    pictureBox.Image = Utils.GetDownloadedImage("https://raw.githubusercontent.com/ArkaneDev/WinPass11/guided/WinPass11.GuidedInstaller/assets/Logo.png");
+                    pictureBox.Image = Utils.GetDownloadedImage("https://raw.githubusercontent.com/ArkaneDev/WinPass11/guided/WinPass11Guided/assets/Logo.png");
                     actionButton.Text = "GitHub";
                     break;
                 case Page.CleanPrev:
                     descriptionBox.Text = "If you have previously attempted to install Windows 11 with WinPass11, you should click clean now. If not, it won't affect the rest of the process installation.";
                     buttonLabel.Text = "Clean Previous Installations >";
-                    pictureBox.Image = Utils.GetDownloadedImage("https://raw.githubusercontent.com/ArkaneDev/WinPass11/guided/WinPass11.GuidedInstaller/assets/Updates.png");
+                    pictureBox.Image = Utils.GetDownloadedImage("https://raw.githubusercontent.com/ArkaneDev/WinPass11/guided/WinPass11Guided/assets/Updates.png");
                     actionButton.Text = "Clean";
                     break;
                 case Page.ApplyTweaks:
                     buttonLabel.Text = "Apply registry tweaks >";
-                    pictureBox.Image = Utils.GetDownloadedImage("https://raw.githubusercontent.com/ArkaneDev/WinPass11/guided/WinPass11.GuidedInstaller/assets/Logo.png");
+                    pictureBox.Image = Utils.GetDownloadedImage("https://raw.githubusercontent.com/ArkaneDev/WinPass11/guided/WinPass11Guided/assets/Logo.png");
                     actionButton.Text = "Apply";
                     descriptionBox.Text = "This stage will apply our registry tweaks. The tweaks applied here will bypass the TPM 2.0 and Secure Boot checks. Before you apply them, please ensure you are in the Release Preview channel. Restart if necessary.";
                     break;
                 case Page.UpdateInit:
                     buttonLabel.Text = "Update Settings >";
-                    pictureBox.Image = Utils.GetDownloadedImage("https://raw.githubusercontent.com/ArkaneDev/WinPass11/guided/WinPass11.GuidedInstaller/assets/DevChannel.png");
+                    pictureBox.Image = Utils.GetDownloadedImage("https://raw.githubusercontent.com/ArkaneDev/WinPass11/guided/WinPass11Guided/assets/DevChannel.png");
                     descriptionBox.Text = "Now we're ready to update. Click the button to go to the Settings app and click check now, if everything went well, you should see downloading Windows 11 Insider Preview, but dont leave just yet, we still need to bypass the requirements.";
                     actionButton.Text = "Settings";
                     break;
                 case Page.ReplaceDll:
                     actionButton.Text = "Replace";
                     buttonLabel.Text = "Replace AppraiserRes.dll >";
-                    pictureBox.Image = Utils.GetDownloadedImage("https://raw.githubusercontent.com/ArkaneDev/WinPass11/guided/WinPass11.GuidedInstaller/assets/TpmError.png");
+                    pictureBox.Image = Utils.GetDownloadedImage("https://raw.githubusercontent.com/ArkaneDev/WinPass11/guided/WinPass11Guided/assets/TpmError.png");
                     descriptionBox.Text = "Next up, you will have to wait for the install to fail. Once the installation window says install failed due to TPM 2.0 and/or Secure Boot, close that and click Replace.";
                     nextButton.Text = "Next >";
                     break;

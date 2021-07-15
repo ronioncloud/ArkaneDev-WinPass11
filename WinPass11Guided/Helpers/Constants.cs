@@ -31,7 +31,7 @@ namespace WinPass11Guided.Helpers
         {
             public const string GitHubRepo      = "https://github.com/ArkaneDev/WinPass11";
             public const string RegTweaks       = "https://raw.githubusercontent.com/ArkaneDev/WinPass11/main/WinPass11/files/regtweaks.reg";
-            public const string AppraiserRes    = "https://github.com/CodeProf14/Fix-TPM/blob/main/Fix%20TPM/appraiserres.dll?raw=true";
+            public const string AppraiserRes    = "https://raw.github.com/CodeProf14/Fix-TPM/blob/main/Fix%20TPM/appraiserres.dll";
             public const string WinUpdate       = "ms-settings:windowsupdate";
         }
     }
