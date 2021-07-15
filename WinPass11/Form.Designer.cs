@@ -69,6 +69,7 @@
             // 
             // selectionBox
             // 
+            this.selectionBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.selectionBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectionBox.FormattingEnabled = true;
             this.selectionBox.Items.AddRange(new object[] {
@@ -77,7 +78,6 @@
             this.selectionBox.Name = "selectionBox";
             this.selectionBox.Size = new System.Drawing.Size(121, 23);
             this.selectionBox.TabIndex = 7;
-            this.selectionBox.Text = "Select";
             // 
             // mainPanel
             // 

@@ -27,6 +27,8 @@ namespace WinPass11.Helpers
             public static readonly string InstallButtonDialog    = "Are you sure you want to do this? You cannot undo this action.";
             public static readonly string InstallationCanceled   = "Installation canceled.";
 
+            public static readonly string InvalidChannel         = "Invalid channel. Please select a valid channel.";
+
             public static readonly string RegApplyFailed         = "Failed to apply registry tweaks.";
             public static readonly string RegApplySuccess        = "Successfully applied registry tweaks.";
             public static readonly string RegFileNotDownloaded   = "Failed to apply non-existant file.";
