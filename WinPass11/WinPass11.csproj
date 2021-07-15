@@ -7,7 +7,7 @@
     <ProjectGuid>{BEA4499E-AE4B-4D21-AF32-C8136E77D3C2}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>WinPass11</RootNamespace>
-    <AssemblyName>WinPass11</AssemblyName>
+    <AssemblyName>WinPass11Auto</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
