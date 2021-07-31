@@ -1,5 +1,3 @@
-[![Discord Shield](https://discordapp.com/api/guilds/863911822356119583/widget.png?style=shield)](https://discord.gg/TEFAbz2ZhW)
-
 # WinPass11: Auto
 🔑 [WinPass11](https://github.com/project-winpass11) is a tool for installing Windows 11 on unsupported hardware in a one click installer. Easily run a single executable and have access to Windows 11 through the dev channel without having to worry about unsupported hardware.
 
