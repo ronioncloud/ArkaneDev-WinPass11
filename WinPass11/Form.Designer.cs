@@ -73,7 +73,8 @@
             this.selectionBox.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.selectionBox.FormattingEnabled = true;
             this.selectionBox.Items.AddRange(new object[] {
-            "Dev"});
+            "Dev",
+            "Beta"});
             this.selectionBox.Location = new System.Drawing.Point(12, 69);
             this.selectionBox.Name = "selectionBox";
             this.selectionBox.Size = new System.Drawing.Size(121, 23);
