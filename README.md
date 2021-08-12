@@ -1,7 +1,7 @@
 # WinPass11: Auto
 ***WARNING: WinPass will no longer be receiving further updates.***
 
-*Thank you for choosing our tool, we appreciate every single user! IT means the world to us!*
+*Thank you for choosing our tool, we appreciate every single user! It means the world to us!*
 
 🔑 [WinPass11](https://github.com/project-winpass11) is a tool for installing Windows 11 on unsupported hardware in a one click installer. Easily run a single executable and have access to Windows 11 through the dev channel without having to worry about unsupported hardware.
 
