@@ -1,6 +1,7 @@
 # WinPass11: Guided
+***WARNING: WinPass will no longer be receiving further updates.***
 
-[**Join us on Discord**](https://discord.gg/TEFAbz2ZhW)
+*Thank you for choosing our tool, we appreciate every single user! It means the world to us!*
 
 🔑 [WinPass11](https://github.com/winbyte-devs/WinPass11) is a tool for installing Windows 11 on unsupported hardware in a guided "installer-like" format. Our goal is for the end-user to easily run a single executable and have access to Windows 11 through the dev channel without having to worry about unsupported hardware. This program supports bypassing all of the Windows 11 requirements!
 
