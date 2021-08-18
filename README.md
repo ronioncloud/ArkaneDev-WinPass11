@@ -1,7 +1,7 @@
 # WinPass11: Auto
-***WARNING: WinPass will no longer be receiving further updates after 8/22/2021***
+***WARNING: WinPass will most likely not be receiving further updates following 8/22/2021***
 
-*NOTE: You need to be in the insider Release preview channel **BEFORE** using WinPass. WinPass does not enroll you in insiders, it changes your channel while bypassing restrictions.*
+*NOTE: You need to be in the Windows Insider Release Preview channel **BEFORE** using WinPass. WinPass does not enroll you in insiders, it changes your channel while bypassing restrictions.*
 
 🔑 [WinPass11](https://github.com/project-winpass11) is a tool for installing Windows 11 on unsupported hardware in a one click installer. Easily run a single executable and have access to Windows 11 through the dev channel without having to worry about unsupported hardware.
 
