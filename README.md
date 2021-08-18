@@ -1,5 +1,5 @@
 # WinPass11: Auto
-***WARNING: WinPass will no longer be receiving further updates.***
+***WARNING: WinPass will no longer be receiving further updates after 8/22/2021***
 
 *Thank you for choosing our tool, we appreciate every single user! It means the world to us!*
 
